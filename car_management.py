@@ -75,9 +75,18 @@ def add_car():
     while type(int(mileage)) != int or mileage != '0':
         mileage = int(input(f"You did not enter valid mileage.\nWhat is your vehicle's mileage?"))
         quit(mileage)
+    new_car = CarManager(make, model, year, mileage)
+    print(f'Your vehicle has been added!\n{new_car}')
+    welcome()
+    
 
 # 2. View all cars
-# def view_cars
+def view_cars():
+    for car in CarManager.ALL_CARS:
+        print(car)
+    user_input = input('Enter any key to continue')
+    if user_input:
+        welcome()    
 # 3. View total number of cars
 # 4. See a car's details
 # 5. Service a car
